@@ -1,10 +1,13 @@
-<html> <!-- do not use <!DOCTYPE html> -->
+<html lang="en"><!-- do not use <!DOCTYPE html> -->
 
 <head>
-  <title>TemplateEN templateTR</title>
-  <meta name="keywords" content="TemplateEN, templateTR, patoloji, atlas, pathology, whole slide image">
 
-  <meta name="description" content="TemplateEN templateTR">
+
+  <title>duodenum tubular adenoma duodenum tübüler adenom</title>
+  <meta name="keywords"
+    content="duodenum tubular adenoma, duodenum tübüler adenom, patoloji, atlas, pathology, whole slide image">
+
+  <meta name="description" content="duodenum tubular adenoma duodenum tübüler adenom">
 
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,9 +26,11 @@
 
   <!-- <script src="openseadragon/openseadragon-scalebar.js"></script> -->
 
+
 </head>
 
 <body>
+
   <div>
     <label for="rotation-slider">Rotate Image:</label>
     <input type="range" id="rotation-slider" min="0" max="360" value="0">
@@ -33,39 +38,30 @@
 
   <div id="openseadragon1" style="width: 100%; height: 95%;"></div>
 
-
-
-
-
-
-
   <script type="text/javascript">
     var viewer = OpenSeadragon({
-      id: 'openseadragon1',
-      //        prefixUrl: 'https://images.patolojiatlasi.com/openseadragon/images/',
-      prefixUrl: './openseadragon/images/',
-
-      showHomeControl: true,
+      id: "openseadragon1",
+      prefixUrl: "./openseadragon/images/",
+      showHomeControl: false,
       showRotationControl: true,
       showNavigator: true,
       showFlipControl: true,
-      navigatorBackground: 'rgb(240, 240, 240)',
-
-
+      navigatorBackground: "rgb(240, 240, 240)",
       tileSources: {
         Image: {
-          Url: './HE_files/', // name of image folder
-          TileSize: '254', // see .dzi file
-          Overlap: '1', // see .dzi file
-          Format: 'jpeg', // see .dzi file
-          ServerFormat: 'Default', // optional
-          xmlns: 'http://schemas.microsoft.com/deepzoom/2008', // see .dzi file
+          Url: "./HE_files/",
+          TileSize: "254",
+          Overlap: "1",
+          Format: "jpeg",
+          ServerFormat: "Default",
+          xmlns: "http://schemas.microsoft.com/deepzoom/2008",
           Size: {
-            Width: '51792', // see .dzi file
-            Height: '30580' // see .dzi file
+            Width: "64864",
+            Height: "26356"
           }
         }
       }
+
       // ,
       // tileSources: "yourwsi.dzi",
       // sequenceMode: false,
@@ -85,14 +81,14 @@
     });
 
     /*     viewer.scalebar({
-            minWidth: '100px',
-            pixelsPerMeter: '1.98255e+06',
-            fontFamily: 'Arial',
-            backgroundColor: 'rgba(255, 255, 255, 0.5)',
-            fontSize: 'small',
-            barThickness: '2',
-            xOffset: '10',
-            yOffset: '10'
+            minWidth: "100px",
+            pixelsPerMeter: "1.98255e+06",
+            fontFamily: "Arial",
+            backgroundColor: "rgba(255, 255, 255, 0.5)",
+            fontSize: "small",
+            barThickness: "2",
+            xOffset: "10",
+            yOffset: "10"
         }); */
 
 
@@ -105,31 +101,31 @@
 
 
       switch (event.keyCode) {
-        case 90: // 'Z' key for zoom in
+        case 90: // "Z" key for zoom in
           viewer.viewport.zoomBy(1.2);
           viewer.viewport.applyConstraints();
           break;
-        case 88: // 'X' key for zoom out
+        case 88: // "X" key for zoom out
           viewer.viewport.zoomBy(0.8);
           viewer.viewport.applyConstraints();
           break;
         case 37: // Left arrow key
-        case 65: // 'A' key
+        case 65: // "A" key
           viewer.viewport.panBy(new OpenSeadragon.Point(-0.05, 0));
           viewer.viewport.applyConstraints();
           break;
         case 38: // Up arrow key
-        case 87: // 'W' key
+        case 87: // "W" key
           viewer.viewport.panBy(new OpenSeadragon.Point(0, -0.05));
           viewer.viewport.applyConstraints();
           break;
         case 39: // Right arrow key
-        case 68: // 'D' key
+        case 68: // "D" key
           viewer.viewport.panBy(new OpenSeadragon.Point(0.05, 0));
           viewer.viewport.applyConstraints();
           break;
         case 40: // Down arrow key
-        case 83: // 'S' key
+        case 83: // "S" key
           viewer.viewport.panBy(new OpenSeadragon.Point(0, 0.05));
           viewer.viewport.applyConstraints();
           break;
@@ -137,10 +133,11 @@
     });
 
 
-    document.getElementById('rotation-slider').addEventListener('input', function (event) {
+    document.getElementById("rotation-slider").addEventListener("input", function (event) {
       var rotationAngle = event.target.value;
       viewer.viewport.setRotation(parseFloat(rotationAngle));
     });
+
 
   </script>
 </body>
